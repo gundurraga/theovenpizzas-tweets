@@ -1,7 +1,5 @@
 //TODO
-//subir heroku
-//subir github
-//cambiar foto de perfil
+//add different content to tweets than quotes
 
 const dotenv = require("dotenv");
 const { TwitterApi } = require("twitter-api-v2");
@@ -67,7 +65,10 @@ async function pizzaTweet() {
       return;
     });
 
-  await client.v1.updateAccountProfileImage("./OvenPizza.png");
+  await client.v1.updateAccountProfileImage("./OvenPizza.png").catch((err) => {
+    console.log(err);
+    return;
+  });
 }
 
 let minute = 60000;
