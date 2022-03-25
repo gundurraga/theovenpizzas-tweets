@@ -71,10 +71,10 @@ async function pizzaTweet() {
   });
 }
 
-let minute = 60000;
+let hour = 3600000;
 
 pizzaTweet();
 
 setInterval(() => {
   pizzaTweet();
-}, 288 * minute); //4.8 hours
+}, 4 * hour);
