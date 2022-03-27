@@ -64,11 +64,6 @@ async function pizzaTweet() {
       console.log(err);
       return;
     });
-
-  await client.v1.updateAccountProfileImage("./OvenPizza.png").catch((err) => {
-    console.log(err);
-    return;
-  });
 }
 
 let hour = 3600000;
