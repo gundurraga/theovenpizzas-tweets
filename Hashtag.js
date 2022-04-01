@@ -12,6 +12,11 @@ function hashtags() {
     "#TheOvenPizzas",
     "#OpenSeaNFT",
     "#pizzaparty",
+    "#pizza",
+    "#cheese",
+    "#art",
+    "$ETH",
+    "#ToTheMoon",
   ];
   let firstHashtag =
     hashtagsPossibilities[
