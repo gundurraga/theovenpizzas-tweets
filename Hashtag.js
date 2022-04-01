@@ -27,6 +27,10 @@ function hashtags() {
     hashtagsPossibilities[
       Math.floor(Math.random() * hashtagsPossibilities.length)
     ];
+  let thirdHashtag =
+    hashtagsPossibilities[
+      Math.floor(Math.random() * hashtagsPossibilities.length)
+    ];
 
   while (firstHashtag === secondHashtag) {
     secondHashtag =
@@ -34,8 +38,14 @@ function hashtags() {
         Math.floor(Math.random() * hashtagsPossibilities.length)
       ];
   }
+  while (firstHashtag === thirdHashtag || secondHashtag === thirdHashtag) {
+    thirdHashtag =
+      hashtagsPossibilities[
+        Math.floor(Math.random() * hashtagsPossibilities.length)
+      ];
+  }
 
-  let hashtags = `${firstHashtag} ${secondHashtag}`;
+  let hashtags = `${firstHashtag} ${secondHashtag} ${thirdHashtag}`;
   return hashtags;
 }
 
