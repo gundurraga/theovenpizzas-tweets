@@ -6,6 +6,7 @@ const { TwitterApi } = require("twitter-api-v2");
 
 const Hashtag = require("./Hashtag");
 const Downloader = require("./Downloader");
+const Stats = require("./Stats");
 
 const pizzas = require("./opensea_data.json");
 const quotes = require("./quotes.json");
@@ -66,10 +67,40 @@ async function pizzaTweet() {
     });
 }
 
+async function statsTweet() {
+  const stats = await Stats.collectionStats();
+
+  await client.v1
+    .tweet(
+      "#TheOvenPizzas #Opensea #NFTCollectionStats\n Owners: " +
+        stats.num_owners +
+        "\n 30 day sales: " +
+        stats.thirty_day_sales +
+        "\n Floor price: " +
+        stats.floor_price.toFixed(3) +
+        " $ETH \n Total Volume: " +
+        stats.total_volume.toFixed(3) +
+        " $ETH"
+    )
+    .then((val) => {
+      client.v2.like(val.user.id_str, val.id_str);
+      console.log("Twitted successfully.");
+    })
+    .catch((err) => {
+      console.log(err);
+      return;
+    });
+}
+
 let hour = 3600000;
 
 pizzaTweet();
+statsTweet();
 
 setInterval(() => {
   pizzaTweet();
-}, 4 * hour);
+}, 3.5 * hour);
+
+setInterval(() => {
+  statsTweet();
+}, 16 * hour);
