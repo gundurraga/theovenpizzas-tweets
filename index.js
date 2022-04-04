@@ -72,13 +72,13 @@ async function statsTweet() {
 
   await client.v1
     .tweet(
-      "#TheOvenPizzas #Opensea #NFTCollectionStats\n Owners: " +
+      "🍕 #TheOvenPizzas #Opensea #NFTCollection #Stats\n🍕 Owners: " +
         stats.num_owners +
-        "\n 30 day sales: " +
+        "\n🍕 30 day sales: " +
         stats.thirty_day_sales +
-        "\n Floor price: " +
+        "\n🍕 Floor price: " +
         stats.floor_price.toFixed(3) +
-        " $ETH \n Total Volume: " +
+        " $ETH \n🍕 Volume traded: " +
         stats.total_volume.toFixed(3) +
         " $ETH"
     )
