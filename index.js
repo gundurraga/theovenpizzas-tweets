@@ -77,7 +77,7 @@ async function statsTweet() {
         "\n🍕 30 day sales: " +
         stats.thirty_day_sales +
         "\n🎨 Floor price: " +
-        stats.floor_price.toFixed(3) +
+        stats.floor_price.toFixed(4) +
         " $ETH \n🍅 Volume traded: " +
         stats.total_volume.toFixed(3) +
         " $ETH"
