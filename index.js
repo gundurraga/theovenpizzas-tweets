@@ -56,7 +56,14 @@ async function pizzaTweet() {
     )
     .then((val) => {
       client.v1
-        .reply(hashtags + "\n" + pizza.opensea_url, val.id_str)
+        .reply(
+          hashtags +
+            "\n\n Buy Oven Pizza #" +
+            pizza.id +
+            " via @opensea\n" +
+            pizza.opensea_url,
+          val.id_str
+        )
         .then((val) => client.v2.like(val.user.id_str, val.id_str));
       client.v2.like(val.user.id_str, val.id_str);
       console.log("Twitted successfully.");

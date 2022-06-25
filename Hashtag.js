@@ -5,6 +5,7 @@ function hashtags() {
     "#NFTCommunity",
     "#NFTCollection",
     "#NFTCollector",
+    "#NFTProject",
     "@opensea",
     "#NFTart",
     "#NFTartist",
@@ -18,15 +19,11 @@ function hashtags() {
     "#art",
     "$ETH",
     "$MATIC",
-    "#ToTheMoon",
     "#PizzaLove",
-    "#wagmi",
-    "#gm",
     "#cryptoart",
-    "#crypto",
     "#digitalart",
     "#NFTfamily",
-    "#NFTFam",
+    "#NFTshill",
   ];
   let firstHashtag =
     hashtagsPossibilities[
