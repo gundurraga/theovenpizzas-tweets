@@ -110,8 +110,8 @@ statsTweet();
 
 setInterval(() => {
   pizzaTweet();
-}, 3.5 * hour);
+}, 2.5 * hour);
 
 setInterval(() => {
   statsTweet();
-}, 16 * hour);
+}, 12 * hour);
