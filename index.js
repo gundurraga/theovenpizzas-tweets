@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const { TwitterApi } = require("twitter-api-v2");
 
 const Hashtag = require("./Hashtag");
+const Emoji = require("./Emoji");
 const Downloader = require("./Downloader");
 const Stats = require("./Stats");
 
@@ -28,6 +29,7 @@ async function pizzaTweet() {
   let quote = quotes[quoteNumber];
 
   let hashtags = Hashtag.hashtags();
+  let emojis = Emoji.emojis();
 
   await Downloader.download(pizza.img_url).catch((err) => {
     console.log(err);
@@ -60,7 +62,9 @@ async function pizzaTweet() {
           hashtags +
             "\n\n Buy Oven Pizza #" +
             pizza.id +
-            " via @opensea\n" +
+            " on @opensea " +
+            emojis +
+            "\n" +
             pizza.opensea_url,
           val.id_str
         )
