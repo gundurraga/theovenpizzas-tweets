@@ -35,9 +35,10 @@ async function memeTweet() {
 
   await client.v1
     .tweet(
-      "NFT Memes by The Oven Pizzas " +
+      Emoji.emojis() +
+        "NFT Memes by The Oven Pizzas " +
         Emoji.emojis() +
-        "\n\n #Nftmemes #NFTcommunity #NFTs #memes",
+        "\n\n#Nftmemes #NFTcommunity #NFTs #memes",
       {
         media_ids: mediaId,
       }
@@ -140,7 +141,7 @@ memeTweet();
 pizzaTweet();
 statsTweet();
 
-let memeTime = (365 * 12) / fs.readdirSync("./memes").length;
+let memeTime = (365 * 8) / fs.readdirSync("./memes").length;
 
 setInterval(() => {
   memeTweet();
