@@ -14,12 +14,43 @@ const quotes = require("./quotes.json");
 
 dotenv.config({ path: "./config.env" });
 
+var fs = require("fs");
+
 const client = new TwitterApi({
   appKey: process.env.TWITTER_API_KEY,
   appSecret: process.env.TWITTER_API_KEY_SECRET,
   accessToken: process.env.TWITTER_ACCESS_TOKEN_KEY,
   accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
+
+async function memeTweet() {
+  var files = fs.readdirSync("./memes");
+  let chosenFile = files[Math.floor(Math.random() * files.length)];
+  mediaId = await client.v1
+    .uploadMedia(`./memes/${chosenFile}`)
+    .catch((err) => {
+      console.log(err);
+      return;
+    });
+
+  await client.v1
+    .tweet(
+      "NFT Memes by The Oven Pizzas " +
+        Emoji.emojis() +
+        "\n\n #Nftmemes #NFTcommunity #NFTs #memes",
+      {
+        media_ids: mediaId,
+      }
+    )
+    .then((val) => {
+      client.v2.like(val.user.id_str, val.id_str);
+      console.log("Twitted meme successfully.");
+    })
+    .catch((err) => {
+      console.log(err);
+      return;
+    });
+}
 
 async function pizzaTweet() {
   let pizzaNumber = Math.floor(Math.random() * 10000);
@@ -70,7 +101,7 @@ async function pizzaTweet() {
         )
         .then((val) => client.v2.like(val.user.id_str, val.id_str));
       client.v2.like(val.user.id_str, val.id_str);
-      console.log("Twitted successfully.");
+      console.log("Twitted quote successfully.");
     })
     .catch((err) => {
       console.log(err);
@@ -95,7 +126,7 @@ async function statsTweet() {
     )
     .then((val) => {
       client.v2.like(val.user.id_str, val.id_str);
-      console.log("Twitted successfully.");
+      console.log("Twitted stats successfully.");
     })
     .catch((err) => {
       console.log(err);
@@ -105,8 +136,15 @@ async function statsTweet() {
 
 let hour = 3600000;
 
+memeTweet();
 pizzaTweet();
 statsTweet();
+
+let memeTime = (365 * 12) / fs.readdirSync("./memes").length;
+
+setInterval(() => {
+  memeTweet();
+}, memeTime * hour);
 
 setInterval(() => {
   pizzaTweet();
