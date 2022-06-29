@@ -36,7 +36,7 @@ async function memeTweet() {
   await client.v1
     .tweet(
       Emoji.emojis() +
-        "NFT Memes by The Oven Pizzas " +
+        " NFT Memes by The Oven Pizzas " +
         Emoji.emojis() +
         "\n\n#Nftmemes #NFTcommunity #NFTs #memes",
       {
