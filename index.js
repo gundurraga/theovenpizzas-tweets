@@ -38,7 +38,7 @@ async function memeTweet() {
       Emoji.emojis() +
         " NFT Memes by The Oven Pizzas " +
         Emoji.emojis() +
-        "\n\n#Nftmemes #NFTcommunity #NFTs #memes #nftmeme",
+        "\n\n#Nftmemes #NFTcommunity #NFTs #memes #nftmeme #nft #meme #NFTCollector #PolygonNFT #TheOvenPizzas #opensea #NFTart #NFTartist #NFTCollection",
       {
         media_ids: mediaId,
       }
@@ -141,7 +141,7 @@ memeTweet();
 pizzaTweet();
 statsTweet();
 
-let memeTime = (365 * 8) / fs.readdirSync("./memes").length;
+let memeTime = (365 * 9) / fs.readdirSync("./memes").length;
 
 setInterval(() => {
   memeTweet();
@@ -149,8 +149,8 @@ setInterval(() => {
 
 setInterval(() => {
   pizzaTweet();
-}, 2.5 * hour);
+}, 3 * hour);
 
 setInterval(() => {
   statsTweet();
-}, 12 * hour);
+}, 14 * hour);

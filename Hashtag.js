@@ -24,6 +24,7 @@ function hashtags() {
     "#digitalart",
     "#NFTfamily",
     "#NFTshill",
+    "#opensea",
   ];
   let firstHashtag =
     hashtagsPossibilities[
