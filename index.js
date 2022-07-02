@@ -38,7 +38,7 @@ async function memeTweet() {
       Emoji.emojis() +
         " NFT Memes by The Oven Pizzas " +
         Emoji.emojis() +
-        "\n\n#Nftmemes #NFTcommunity #NFTs #memes #nftmeme #nft #meme #NFTCollector #PolygonNFT #TheOvenPizzas #opensea #NFTart #NFTartist #NFTCollection",
+        "\n\n#Nftmemes #NFTcommunity #NFTs #memes #nftmeme #nft #meme",
       {
         media_ids: mediaId,
       }
